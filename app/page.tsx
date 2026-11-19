@@ -30,14 +30,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="hcard">
-            <b><i>★</i> {site.years}+ years of care</b>
-            <ul><li>Home visits</li><li>Female staff</li><li>DPT doctors</li></ul>
-            <div className="ph">
-              <Image src={PHOTO} alt="" width={1000} height={1180} sizes="240px" />
-              <Link href="/services" aria-label="See our services"><Arrow /></Link>
-            </div>
-          </div>
           <span className="bigword" aria-hidden="true">Physiotherapy</span>
         </section>
       </div>
@@ -56,7 +48,6 @@ export default function Home() {
             </div>
             <a className="lbtn dark" href={wa()} target="_blank" rel="noopener">Book a consultation <Arrow /></a>
           </div>
-          <div className="im b"><Image src={PHOTO} alt="Patient doing a guided stretch with a physiotherapist" width={1000} height={1180} sizes="(max-width: 1020px) 50vw, 290px" /></div>
         </div>
       </section>
 
@@ -97,7 +88,7 @@ export default function Home() {
               <li><small>02</small><h3>Start your treatment</h3><p>A certified physiotherapist assesses your condition and starts a treatment plan made for you.</p></li>
               <li><small>03</small><h3>Move and feel better</h3><p>Regular sessions and a home exercise programme help you recover and stay pain free.</p></li>
             </ol>
-            <div className="ph"><Image src={PHOTO} alt="Physiotherapist guiding a patient through treatment" width={1000} height={1180} sizes="(max-width: 1020px) 100vw, 480px" /></div>
+            <div className="ph illo"><Image src="/images/2024_08_Asset-1-4-1024x826.png" alt="Physiotherapist taking a booking by phone" width={1024} height={826} sizes="(max-width: 1020px) 100vw, 480px" /></div>
           </div>
         </div>
       </section>
