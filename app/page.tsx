@@ -9,18 +9,6 @@ const home = getPage("home");
 // The only real photo we have so far; swap in clinic photos when available.
 const PHOTO = "/images/hero-physiotherapy-home-visit.webp";
 
-function SpinBadge() {
-  return (
-    <a className="spin" href={wa()} target="_blank" rel="noopener" aria-label="Book on WhatsApp">
-      <svg className="ring" viewBox="0 0 100 100" aria-hidden="true">
-        <defs><path id="circ" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0" /></defs>
-        <text fill="#cfe3ef" fontSize="9.2" fontWeight="700" letterSpacing="2.4"><textPath href="#circ">HOME PHYSIO PRO • HEAL AT HOME • </textPath></text>
-      </svg>
-      <span className="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" /></svg></span>
-    </a>
-  );
-}
-
 export default function Home() {
   const why = children(home, "Why Choose");
   const conditions = lists(find(home, "What Physical Conditions"));
@@ -29,14 +17,13 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <div className="wrap lhero-wrap">
+      <div className="lhero-wrap">
         <section className="lhero">
           <Image src={PHOTO} alt="Physiotherapist stretching a patient's leg during a home physiotherapy session" width={1000} height={1180} priority sizes="(max-width: 1220px) 100vw, 1180px" />
           <div className="lhero-in">
             <span className="tag light">Physiotherapy in {site.cities}</span>
             <h1>Expert Physiotherapy<br />That Helps You<br /><em>Live <span>Pain Free</span></em></h1>
             <div className="lhero-row">
-              <SpinBadge />
               <div>
                 <p>Certified physiotherapists who come to your home 24/7, or see you in our clinic. {site.price} per session.</p>
                 <a className="lbtn" href={wa()} target="_blank" rel="noopener">Book on WhatsApp <Arrow /></a>

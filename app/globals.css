@@ -439,3 +439,16 @@ section.dark { background: var(--navy); }
 @media (prefers-reduced-motion: reduce) { .spin svg.ring, .marquee .track { animation: none; } }
 
 @media (max-width: 640px) { .hide-md { display: none !important; } }
+
+/* Home: full-bleed hero photo behind a glass header */
+header.site.over { position: fixed; left: 0; right: 0; top: 0; background: transparent; border-bottom: 0; transition: background .3s, padding .3s; padding-top: 14px; }
+header.site.over .wrap { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 6px; padding: 0 18px; height: 72px; backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); box-shadow: 0 10px 30px -18px rgba(0,0,0,.5); }
+header.site.over.scrolled { padding-top: 8px; }
+header.site.over.scrolled .wrap { background: rgba(6,38,58,.72); }
+.lhero-wrap { padding: 0; }
+.lhero { border-radius: 0; min-height: 100vh; min-height: 100svh; }
+.lhero-in { padding: 150px max(24px, calc((100vw - 1180px) / 2)) 190px; max-width: none; width: 100%; }
+.lhero-in > * { max-width: 640px; }
+.hcard { right: max(24px, calc((100vw - 1180px) / 2)); bottom: 40px; }
+@media (max-width: 1020px) { .mobile-nav.open { inset: 86px 0 0; } header.site.over .wrap { width: calc(100% - 24px); } }
+@media (max-width: 640px) { .lhero-in { padding: 130px 20px 150px; } }

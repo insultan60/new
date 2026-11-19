@@ -9,6 +9,14 @@ export default function Header() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   useEffect(() => setOpen(false), [path]);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const on = () => setScrolled(window.scrollY > 40);
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    return () => window.removeEventListener("scroll", on);
+  }, []);
+  const over = path === "/";
   const active = (h: string) => (h === "/" ? path === "/" : path.startsWith(h.split("/").slice(0, 2).join("/")));
 
   return (
@@ -24,7 +32,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <header className="site">
+      <header className={`site${over ? " over" : ""}${over && scrolled ? " scrolled" : ""}`}>
         <div className="wrap">
           <Link href="/" className="logo" aria-label="Home Physio Pro home">
             <span className="logo-mark"><img src="/logo.svg" alt="" width={40} height={40} /></span>
