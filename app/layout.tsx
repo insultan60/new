@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Sora, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import { FloatingWA, Footer } from "@/components/Blocks";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = Instrument_Serif({ subsets: ["latin"], variable: "--font-display", weight: "400", style: ["normal", "italic"] });
+const display = Sora({ subsets: ["latin"], variable: "--font-display", weight: ["400", "500", "600", "700"] });
 const sans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {

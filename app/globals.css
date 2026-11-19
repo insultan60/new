@@ -525,3 +525,22 @@ header.site .lbtn { padding: 12px 18px; border-radius: 8px; }
   .hero-facts { gap: 20px; }
   .lbenefit .im { display: block !important; }
 }
+
+/* ===== Modern sans headings (Sora) ===== */
+:root { --display: var(--font-display), system-ui, sans-serif; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -0.035em; line-height: 1.08; }
+h3 { letter-spacing: -0.02em; }
+h1 em, h2 em, h3 em, em.accent { font-style: normal; }
+.lhero h1 { font-size: clamp(2.4rem, 4.8vw, 4rem); font-weight: 600; }
+.lhero h1 em span { color: var(--turq); }
+h2 em, em.accent { color: var(--teal); }
+.ldark h2 em, .lcta h2 em { color: inherit; opacity: .85; }
+.ldark h2 em { color: var(--turq); opacity: 1; }
+header.site .logo { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.02em; }
+.hero-facts b, .st b, .rings b { font-weight: 600; letter-spacing: -0.03em; }
+.st b { font-size: 2.6rem; }
+.spec span, .lhow li small { font-style: normal; font-weight: 600; }
+.marquee span { font-weight: 600; letter-spacing: -0.02em; font-size: clamp(1.2rem, 2.4vw, 1.9rem); }
+.spec h3, .prod h3, a.card h3 { font-size: 1.2rem; }
+.lhow li h3 { font-size: 1.3rem; }
+.lhero-in > h1 { max-width: 760px; }
