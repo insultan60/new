@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
+import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import { FloatingWA, Footer } from "@/components/Blocks";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = Manrope({ subsets: ["latin"], variable: "--font-display" });
+const display = Instrument_Serif({ subsets: ["latin"], variable: "--font-display", weight: "400", style: ["normal", "italic"] });
 const sans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, services, site, wa } from "@/lib/site";
-import { Chevron, Close, Clock, Mail, Menu, Phone, ServiceIcon, WhatsApp } from "./Icons";
+import { Arrow, Chevron, Close, Clock, Mail, Menu, Phone, ServiceIcon, WhatsApp } from "./Icons";
 
 export default function Header() {
   const path = usePathname();
@@ -50,7 +50,7 @@ export default function Header() {
             )}
           </nav>
           <div className="head-cta">
-            <a className="head-phone" href={`tel:${site.phoneIntl}`}><Phone /> {site.phone}</a>
+            <a className="lbtn hide-md" href={wa()} target="_blank" rel="noopener">Book now <Arrow /></a>
             <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Open menu" aria-expanded={open}>{open ? <Close /> : <Menu />}</button>
           </div>
         </div>
