@@ -1,37 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Checklist, CTA, Faq, ServiceCards } from "@/components/Blocks";
+import HeroForm from "@/components/HeroForm";
 import { Arrow, Check, Phone, Shield, Users, Wallet, WhatsApp, Clock } from "@/components/Icons";
 import { children, faqs, find, getPage, lists, paras } from "@/lib/content";
 import { site, wa } from "@/lib/site";
 
 const home = getPage("home");
-
-function HeroArt() {
-  return (
-    <div className="hero-art">
-      <div className="hero-photo">
-        <Image
-          src="/images/hero-physiotherapy-home-visit.webp"
-          alt="Female physiotherapist stretching a patient's leg during a home physiotherapy session"
-          width={1000}
-          height={1180}
-          priority
-          sizes="(max-width: 1020px) 90vw, 520px"
-        />
-      </div>
-      <div className="hero-card female">
-        <span className="ico" style={{ marginBottom: 10 }}><Users /></span>
-        <b>Female physiotherapists</b>
-        <span className="small">Separate female staff for women’s health and home visits.</span>
-      </div>
-      <div className="hero-card price">
-        <span className="ico"><Wallet /></span>
-        <div><b>{site.price}</b><span className="small">per {site.sessionLength} session</span></div>
-      </div>
-    </div>
-  );
-}
 
 export default function Home() {
   const specialties = children(home, "Our Comprehensive");
@@ -43,46 +18,77 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero">
-        <div className="wrap hero-grid">
-          <div>
-            <div className="eyebrow">Physiotherapy in {site.cities}</div>
-            <h1>Heal faster, <em className="accent">at home</em>, with expert physiotherapists.</h1>
-            <p className="lead">{paras(home.sections[0])[0]}</p>
-            <div className="actions">
-              <a className="btn btn-wa" href={wa()} target="_blank" rel="noopener"><WhatsApp /> Book on WhatsApp</a>
-              <a className="btn btn-ghost" href={`tel:${site.phoneIntl}`}><Phone /> {site.phone}</a>
-            </div>
-            <ul className="checks">
-              <li><Check /> Home visits 24/7</li>
-              <li><Check /> Certified DPT doctors</li>
-              <li><Check /> Female staff available</li>
-            </ul>
-          </div>
-          <HeroArt />
+      <section className="ghero">
+        <div className="wrap ghero-top">
+          <p>Personalised physiotherapy at home and in clinic across {site.cities}, designed to restore your strength, mobility and confidence so you can live pain free.</p>
+          <h1>Recover. Rebuild.<br />Heal <em>at Home.</em></h1>
         </div>
       </section>
 
-      <div className="wrap">
-        <div className="stats">
-          <div><b>{site.years}+</b><span>years in the twin cities</span></div>
-          <div><b>24/7</b><span>home physiotherapy</span></div>
-          <div><b>13</b><span>physiotherapy specialties</span></div>
-          <div><b>{site.price}</b><span>per session</span></div>
+      <div className="gstage">
+        <HeroForm />
+        <div className="gphoto">
+          <Image src="/images/hero-physiotherapy-home-visit.webp" alt="Physiotherapist stretching a patient's leg during a home physiotherapy session" width={1000} height={1180} priority sizes="(max-width: 1220px) 100vw, 1180px" />
+          <div className="trust"><b>{site.years}+ years</b>Trusted by patients across the twin cities</div>
         </div>
       </div>
+
+      <section className="block">
+        <div className="wrap gabout">
+          <div className="gabout-img">
+            <Image src="/images/hero-physiotherapy-home-visit.webp" alt="Certified physiotherapist treating a patient" width={1000} height={1180} sizes="(max-width: 1020px) 100vw, 520px" />
+            <div className="yrs"><b>{site.years}+</b><span>Years of experience</span></div>
+          </div>
+          <div>
+            <h2>Expert <em className="accent">Physiotherapy</em> for a Healthier, Pain-Free Life</h2>
+            <p className="lead">{paras(home.sections[0])[0]}</p>
+            <ul className="checks" style={{ margin: "22px 0 30px" }}>
+              <li><Check /> Home visits 24/7</li>
+              <li><Check /> Certified DPT doctors</li>
+              <li><Check /> Female staff available</li>
+              <li><Check /> {site.price} per session</li>
+            </ul>
+            <Link className="btn btn-primary" href="/about">Read more <span className="chip"><Arrow /></span></Link>
+          </div>
+        </div>
+      </section>
 
       <section className="block">
         <div className="wrap">
           <div className="head">
             <div>
-              <div className="eyebrow">Our services</div>
-              <h2>Care that comes to you</h2>
+              <h2>Physiotherapy <em className="accent">Services</em></h2>
               <p>From post-surgery rehab to children’s therapy and hijama, choose the care you need, at home or in clinic.</p>
             </div>
-            <Link className="btn btn-ghost" href="/services">All services <Arrow /></Link>
+            <Link className="btn btn-primary" href="/services">All services <span className="chip"><Arrow /></span></Link>
           </div>
           <ServiceCards />
+        </div>
+      </section>
+
+      <section className="block process-wrap">
+        <svg className="sparkle" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><path d="M50 0C53 35 65 47 100 50 65 53 53 65 50 100 47 65 35 53 0 50 35 47 47 35 50 0z" /></svg>
+        <div className="wrap">
+          <div className="head">
+            <div>
+              <h2>Our <em className="accent">3-Step</em> Recovery Process</h2>
+              <p>Recovery is more than a single session. Our certified physiotherapists combine clinical expertise with a plan made for you, at home or in clinic.</p>
+            </div>
+            <a className="btn btn-primary" href={wa()} target="_blank" rel="noopener">Start your recovery <span className="chip"><Arrow /></span></a>
+          </div>
+          <div className="process">
+            {[
+              ["Assessment", "A detailed consultation and examination to understand your condition, pain and goals."],
+              ["Treatment Plan", "Hands-on therapy, exercises and advice tailored to you, delivered at home or in our clinic."],
+              ["Continuous Support", "Regular progress checks and a home exercise programme so you stay pain free after recovery."],
+            ].map(([t, d], i) => (
+              <div className="pstep" key={t}>
+                <span className="n">0{i + 1}</span>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

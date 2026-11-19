@@ -50,8 +50,7 @@ export default function Header() {
             )}
           </nav>
           <div className="head-cta">
-            <a className="btn btn-ghost" href={`tel:${site.phoneIntl}`}><Phone /> Call</a>
-            <a className="btn btn-primary" href={wa()} target="_blank" rel="noopener"><WhatsApp /> Book a visit</a>
+            <a className="head-phone" href={`tel:${site.phoneIntl}`}><Phone /> {site.phone}</a>
             <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Open menu" aria-expanded={open}>{open ? <Close /> : <Menu />}</button>
           </div>
         </div>

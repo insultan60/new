@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import { FloatingWA, Footer } from "@/components/Blocks";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = Fraunces({ subsets: ["latin"], variable: "--font-display", axes: ["opsz"] });
+const display = Manrope({ subsets: ["latin"], variable: "--font-display" });
 const sans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
